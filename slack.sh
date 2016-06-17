@@ -6,7 +6,9 @@ message=$2
 username=Zabbix
 
 # Change message color depending on the subject
-if [ "${subject%%:*}" == 'OK' ]; then
+if [[ "${message}" == *'Normal "Generic"'* ]]; then
+        color="#91bbfc"
+elif [ "${subject%%:*}" == 'OK' ]; then
         color="good"
 elif [ "${subject%%:*}" == 'PROBLEM' ]; then
         color="danger"
