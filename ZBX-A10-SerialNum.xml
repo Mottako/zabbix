@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-02-23T11:00:03Z</date>
+    <date>2017-02-20T09:44:24Z</date>
     <groups>
         <group>
-            <name>ZBX-A10-TEMPLATES</name>
+            <name>Templates</name>
         </group>
     </groups>
     <templates>
@@ -14,7 +14,7 @@
             <description/>
             <groups>
                 <group>
-                    <name>ZBX-A10-TEMPLATES</name>
+                    <name>Templates</name>
                 </group>
             </groups>
             <applications>
