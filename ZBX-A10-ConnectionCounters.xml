@@ -78,7 +78,7 @@
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <snmp_oid>discovery[{#AXSERVERNAME},axServerStatName,{#AXSERVERADDRESS},A10-AX-MIB::axServerStatAddress]</snmp_oid>
                     <key>RealCurConns</key>
-                    <delay>60</delay>
+                    <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -193,7 +193,7 @@
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <snmp_oid>discovery[{#AXVSERVERNAME},axVirtualServerStatName,{#AXVSERVERADDRESS},A10-AX-MIB::axVirtualServerStatAddress]</snmp_oid>
                     <key>VirtualCurConns</key>
-                    <delay>60</delay>
+                    <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
