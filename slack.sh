@@ -1,6 +1,6 @@
 #!/bin/bash
-
-slack_url= [Webhook URL]
+zabbix_url='[ZABBIX URL]'
+slack_url='[Webhook URL]'
 subject=$1
 message=$2
 username=Zabbix
@@ -21,15 +21,23 @@ message=`echo ${message} | sed -e 's/"//g'`
 
 # Message format
 payload="payload={
-   \"username\":\"${username}\",
-   \"attachments\": [
-    {
-        \"title\": \"${subject%%:*}\",
-        \"color\": \"${color}\",
-        \"text\": \"${message}\"
-    }
-  ]
+    \"username\":\"${username}\",
+    \"attachments\": [
+        {
+            \"fallback\": \"fallback\",
+            \"text\": \"${zabbix_url}|Zabbix>\",
+            \"color\": \"${color}\",
+            \"fields\":[
+                {
+                    \"title\": \"${subject%%:*}\",
+                    \"value\": \"${message}\",
+                    \"short\": true
+     
+                }
+            ]
+        }
+    ]
 }"
 
 # Posting message to slack
-curl -m 5 --data-urlencode "${payload}" "${slack_url}"
+curl -s -m 5 --data-urlencode "${payload}" "${slack_url}"
